@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>태양계 행성 소개</title>
+  <meta name="description" content="수성부터 해왕성까지, 태양계 8개 행성의 크기·거리·공전 주기를 한눈에 비교합니다.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2240%22 fill=%22%23ffb703%22/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="sun" aria-hidden="true"></div>
+    <h1>태양계 행성 소개</h1>
+    <p>태양 주위를 도는 8개의 행성을 만나 보세요. 카드를 누르면 자세한 정보가 나옵니다.</p>
+  </header>
+
+  <main>
+    <nav class="filters" aria-label="행성 종류">
+      <button type="button" class="filter is-active" data-type="all" aria-pressed="true">전체</button>
+      <button type="button" class="filter" data-type="rocky" aria-pressed="false">암석 행성</button>
+      <button type="button" class="filter" data-type="gas" aria-pressed="false">가스 행성</button>
+      <button type="button" class="filter" data-type="ice" aria-pressed="false">얼음 행성</button>
+    </nav>
+
+    <section aria-labelledby="list-title">
+      <h2 id="list-title" class="visually-hidden">행성 목록</h2>
+      <ul class="grid" id="planet-list"></ul>
+    </section>
+
+    <section class="compare" aria-labelledby="compare-title">
+      <h2 id="compare-title">크기 비교 <small>(지름, 지구 = 1)</small></h2>
+      <ul class="bars" id="size-bars"></ul>
+    </section>
+  </main>
+
+  <dialog id="detail" aria-labelledby="detail-name">
+    <button type="button" class="close" data-close aria-label="닫기">×</button>
+    <div class="detail-head">
+      <div class="planet" id="detail-planet" aria-hidden="true"></div>
+      <div>
+        <p class="detail-type" id="detail-type"></p>
+        <h2 id="detail-name"></h2>
+      </div>
+    </div>
+    <p id="detail-desc"></p>
+    <dl class="stats" id="detail-stats"></dl>
+    <p class="detail-fact" id="detail-fact"></p>
+  </dialog>
+
+  <footer>
+    <p>자료: NASA Solar System Exploration (science.nasa.gov). 위성 수는 새 발견에 따라 바뀔 수 있습니다.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
